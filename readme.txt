@@ -4,7 +4,7 @@ Donate link: http://blog.sjinks.pro/feedback/
 Tags: bbPress, optimization, performance, profile, speed
 Requires at least: 2.8
 Tested up to: 2.9
-Stable tag: 0.2
+Stable tag: 0.1
 
 Profiles how much time to execute every hook takes. Warning: For PHP 5 only.
 
@@ -34,10 +34,6 @@ The handler should return `true` if the hook profiler should be activated, or `f
 None yet. Be the first to ask.
 
 == Changelog ==
-
-= 0.2 =
-* Got rid of a PHP Warning in SjProfiler::end_profile().
-* Improved performance a bit by using [PHP code optimization](http://blog.sjinks.pro/php/651-php-code-beauty-impacts-performance-part-2/ "PHP Code Beauty Impacts Performance")
 
 = 0.1 =
 * First public release
