@@ -1,0 +1,21 @@
+table.hookdebug {
+    margin: 1em auto;
+    clear: both;
+    background: #CCC;
+    border: 2px solid #777;
+    border-collapse: collapse;
+}
+
+table.hookdebug td, table.hookdebug th {
+    padding: 2px;
+    border: 1px solid #CCC;
+}
+
+table.hookdebug td:first-child { text-align: right; font-weight: bold; }
+
+table.hookdebug thead, table.hookdebug tbody {
+    color: #990;
+    background: #EEE;
+    font: x-small Verdana, sans-serif;
+    text-align: left;
+}
