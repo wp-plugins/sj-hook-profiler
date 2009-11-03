@@ -45,7 +45,7 @@ if (!class_exists("SjHookProfiler")) :
 
 		public function init()
 		{
-			$allow = apply_filters('enable_hook_profiler', bb_current_user_can('administrator'));
+			$allow = apply_filters('enable_hook_profiler', current_user_can('administrator'));
 			if ($allow) {
 				wp_enqueue_style('hook-profiler-css', plugins_url('sj-hook-profiler/profiler.css'));
 
@@ -59,7 +59,7 @@ if (!class_exists("SjHookProfiler")) :
 
 		public function bb_init()
 		{
-			$allow = apply_filters('enable_hook_profiler', current_user_can('use_keys'));
+			$allow = apply_filters('enable_hook_profiler', bb_current_user_can('use_keys'));
 			if ($allow) {
 				wp_enqueue_style('hook-profiler-css', BB_PLUGIN_URL . '/sj-hook-profiler/profiler.css');
 
