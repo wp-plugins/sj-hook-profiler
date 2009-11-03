@@ -8,13 +8,13 @@ Plugin URI: http://blog.sjinks.pro/wordpress-plugins/sj-hook-profiler/
 Author URI: http://blog.sjinks.pro/
 */
 
-if (false == class_exists("SjProfilerHelper")) :
+if (!class_exists("SjProfilerHelper")) :
 
 	require_once(dirname(__FILE__) . '/lib/class.Profiler.php');
 
 endif;
 
-if (false == class_exists("SjHookProfiler")) :
+if (!class_exists("SjHookProfiler")) :
 
 	final class SjHookProfiler
 	{
@@ -76,7 +76,7 @@ if (false == class_exists("SjHookProfiler")) :
 			$profile = &SjProfilerHelper::instance()->profile;
 			if (!empty($profile)) {
 				echo '<table class="hookdebug"><thead><tr><th>Hook Name</th><th>Total Time</th><th>Invocations</th><th>Average Time</th></tr></thead><tbody>';
-				foreach ($profile as $tag => $val) {
+				foreach ($profile as $tag => &$val) {
 					$cnt = count($val);
 					if ($cnt) {
 						if ($val[$cnt-1] > self::$started) {
@@ -89,6 +89,7 @@ if (false == class_exists("SjHookProfiler")) :
 					echo '<tr><td>', esc_attr($tag), '</td><td>', number_format($sum, 6), '</td><td>', number_format($cnt), '</td><td>', number_format($avg, 6), '</td></tr>';
 				}
 
+				unset($val);
 				echo '</tbody></table>';
 			}
 		}
