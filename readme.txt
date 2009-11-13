@@ -2,9 +2,9 @@
 Contributors: vladimir_kolesnikov
 Donate link: http://blog.sjinks.pro/feedback/
 Tags: bbPress, optimization, performance, profile, speed
-Requires at least: 2.8
+Requires at least: 2.7
 Tested up to: 2.9
-Stable tag: 0.2
+Stable tag: 0.2.1
 
 Profiles how much time to execute every hook takes. Warning: For PHP 5 only.
 
@@ -34,6 +34,9 @@ The handler should return `true` if the hook profiler should be activated, or `f
 None yet. Be the first to ask.
 
 == Changelog ==
+
+= 0.2.1 =
+* Compatibility with WP 2.7.x
 
 = 0.2 =
 * Got rid of a PHP Warning in SjProfiler::end_profile().

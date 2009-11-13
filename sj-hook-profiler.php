@@ -2,7 +2,7 @@
 /*
 Plugin Name: SJ Hook Profiler
 Description: Profiles how much time to execute every hook takes.
-Version: 0.2
+Version: 0.2.1
 Author: Vladimir Kolesnikov
 Plugin URI: http://blog.sjinks.pro/wordpress-plugins/sj-hook-profiler/
 Author URI: http://blog.sjinks.pro/
@@ -76,6 +76,7 @@ if (!class_exists("SjHookProfiler")) :
 			$profile = &SjProfilerHelper::instance()->profile;
 			if (!empty($profile)) {
 				echo '<table class="hookdebug"><thead><tr><th>Hook Name</th><th>Total Time</th><th>Invocations</th><th>Average Time</th></tr></thead><tbody>';
+				$func = function_exists('esc_attr') ? 'esc_attr' : 'wp_specialchars';
 				foreach ($profile as $tag => &$val) {
 					$cnt = count($val);
 					if ($cnt) {
@@ -86,7 +87,7 @@ if (!class_exists("SjHookProfiler")) :
 
 					$sum = array_sum($val);
 					$avg = ($cnt < 2) ? $sum : $sum/$cnt;
-					echo '<tr><td>', esc_attr($tag), '</td><td>', number_format($sum, 6), '</td><td>', number_format($cnt), '</td><td>', number_format($avg, 6), '</td></tr>';
+					echo '<tr><td>', $func($tag), '</td><td>', number_format($sum, 6), '</td><td>', number_format($cnt), '</td><td>', number_format($avg, 6), '</td></tr>';
 				}
 
 				unset($val);
