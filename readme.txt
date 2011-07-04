@@ -3,7 +3,7 @@ Contributors: vladimir_kolesnikov
 Donate link: http://blog.sjinks.pro/feedback/
 Tags: bbPress, optimization, performance, profile, speed
 Requires at least: 2.7
-Tested up to: 3.0
+Tested up to: 3.2
 Stable tag: 0.2.1
 
 Profiles how much time to execute every hook takes. Warning: For PHP 5 only.
